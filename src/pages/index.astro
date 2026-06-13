@@ -4,47 +4,49 @@ import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTA from '../components/CTA.astro';
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
 const overviewServices = [
   {
     title: "Awning Installation",
     description: "Premium retractable and fixed awnings designed for residential terraces, shop fronts, and commercial decks.",
     icon: "awning",
-    link: `${import.meta.env.BASE_URL}services#awning`,
+    link: `${baseUrl}services#awning`,
     benefits: ["UV Ray Protection", "Waterproof Fabrics", "Custom Colors"]
   },
   {
     title: "Tensile Structures",
     description: "Architectural membrane designs for large open spaces, swimming pools, courtyard coverings, and resorts.",
     icon: "tensile",
-    link: `${import.meta.env.BASE_URL}services#tensile`,
+    link: `${baseUrl}services#tensile`,
     benefits: ["High Wind Resistance", "30+ Year Lifespan", "Modern Designs"]
   },
   {
     title: "Parking Sheds",
     description: "Heavy-duty tensile and polycarbonate car parking structures for commercial complexes and residential societies.",
     icon: "sheds",
-    link: `${import.meta.env.BASE_URL}services#parking`,
+    link: `${baseUrl}services#parking`,
     benefits: ["Vehicle Heat Control", "Galvanized Frame", "All-Weather Proof"]
   },
   {
     title: "Polycarbonate Roofing",
     description: "Sleek, transparent, or tinted roofing sheets for balconies, walkway corridors, and industrial skylights.",
     icon: "roofing",
-    link: `${import.meta.env.BASE_URL}services#polycarbonate`,
+    link: `${baseUrl}services#polycarbonate`,
     benefits: ["99% UV Blockage", "Impact Resistant", "High Light Transmission"]
   },
   {
     title: "Fabric Canopies",
     description: "Elegant dome-shaped or straight-slope fabric shelters for entrance doorways, hotels, and cafes.",
     icon: "canopy",
-    link: `${import.meta.env.BASE_URL}services#canopies`,
+    link: `${baseUrl}services#canopies`,
     benefits: ["Vibrant Color Palette", "Rust-Free Aluminium", "Branding Options"]
   },
   {
     title: "Commercial Shade Solutions",
     description: "Large-scale retractable roofs, glass enclosures, and shade structures customized for restaurants and hotels.",
     icon: "commercial",
-    link: `${import.meta.env.BASE_URL}services#commercial`,
+    link: `${baseUrl}services#commercial`,
     benefits: ["Space Optimization", "Heavy Duty Motors", "Professional Engineering"]
   }
 ];
@@ -145,7 +147,7 @@ const features = [
           </div>
 
           <div class="pt-4">
-            <a href={`${import.meta.env.BASE_URL}about`} class="inline-flex items-center text-sm font-bold text-secondary hover:text-secondary/80 group">
+            <a href={`${baseUrl}about`} class="inline-flex items-center text-sm font-bold text-secondary hover:text-secondary/80 group">
               Read Our Full Story 
               <svg class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -187,7 +189,7 @@ const features = [
 
       <div class="text-center mt-12">
         <a 
-          href={`${import.meta.env.BASE_URL}services`} 
+          href={`${baseUrl}services`} 
           class="inline-flex items-center justify-center px-6 py-3 border border-secondary text-sm font-bold rounded-lg text-secondary hover:bg-secondary/5 transition-all duration-200"
         >
           View All Services & Specifications

@@ -7,9 +7,9 @@ export function getLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Raju Pachuji Chohan - Awnings & Canopies",
-    "image": "https://awningsmumbai.com/images/hero-bg.png", // placeholder image for schema
-    "@id": "https://awningsmumbai.com/#localbusiness",
-    "url": "https://awningsmumbai.com",
+    "image": "https://programmingplaces.github.io/Raju-Pachuji-Chohan/images/hero-bg.png", // placeholder image for schema
+    "@id": "https://programmingplaces.github.io/Raju-Pachuji-Chohan/#localbusiness",
+    "url": "https://programmingplaces.github.io/Raju-Pachuji-Chohan",
     "telephone": "+919768690579",
     "priceRange": "$$",
     "address": {
@@ -74,8 +74,8 @@ export function getOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Raju Pachuji Chohan - Awnings & Canopies",
-    "url": "https://awningsmumbai.com",
-    "logo": "https://awningsmumbai.com/favicon.svg",
+    "url": "https://programmingplaces.github.io/Raju-Pachuji-Chohan",
+    "logo": "https://programmingplaces.github.io/Raju-Pachuji-Chohan/favicon.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+919768690579",

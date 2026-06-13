@@ -2,6 +2,8 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import CTA from '../components/CTA.astro';
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
 const servicesList = [
   {
     id: "awning",
@@ -223,7 +225,7 @@ const servicesList = [
               <!-- Action button linking to contact with prepopulated select option -->
               <div class="pt-4">
                 <a 
-                  href={`${import.meta.env.BASE_URL}contact?service=${service.id}`} 
+                  href={`${baseUrl}contact?service=${service.id}`} 
                   class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-secondary text-white text-sm font-bold shadow-md hover:bg-secondary/90 transition-colors"
                 >
                   Request Quote for {service.title}

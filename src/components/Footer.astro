@@ -1,21 +1,22 @@
 ---
 const currentYear = new Date().getFullYear();
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const quickLinks = [
-  { name: 'Home', path: import.meta.env.BASE_URL },
-  { name: 'About Us', path: `${import.meta.env.BASE_URL}about` },
-  { name: 'Our Services', path: `${import.meta.env.BASE_URL}services` },
-  { name: 'Gallery', path: `${import.meta.env.BASE_URL}gallery` },
-  { name: 'Contact', path: `${import.meta.env.BASE_URL}contact` }
+  { name: 'Home', path: baseUrl },
+  { name: 'About Us', path: `${baseUrl}about` },
+  { name: 'Our Services', path: `${baseUrl}services` },
+  { name: 'Gallery', path: `${baseUrl}gallery` },
+  { name: 'Contact', path: `${baseUrl}contact` }
 ];
 
 const services = [
-  { name: 'Awning Installation', path: `${import.meta.env.BASE_URL}services#awning` },
-  { name: 'Tensile Structures', path: `${import.meta.env.BASE_URL}services#tensile` },
-  { name: 'Parking Sheds', path: `${import.meta.env.BASE_URL}services#parking` },
-  { name: 'Polycarbonate Roofing', path: `${import.meta.env.BASE_URL}services#polycarbonate` },
-  { name: 'Fabric Canopies', path: `${import.meta.env.BASE_URL}services#canopies` },
-  { name: 'Retractable Awnings', path: `${import.meta.env.BASE_URL}services#retractable` }
+  { name: 'Awning Installation', path: `${baseUrl}services#awning` },
+  { name: 'Tensile Structures', path: `${baseUrl}services#tensile` },
+  { name: 'Parking Sheds', path: `${baseUrl}services#parking` },
+  { name: 'Polycarbonate Roofing', path: `${baseUrl}services#polycarbonate` },
+  { name: 'Fabric Canopies', path: `${baseUrl}services#canopies` },
+  { name: 'Retractable Awnings', path: `${baseUrl}services#retractable` }
 ];
 
 const serviceAreas = ['Mumbai', 'Navi Mumbai', 'Thane', 'Mira Road', 'Vasai', 'Virar'];
@@ -27,7 +28,7 @@ const serviceAreas = ['Mumbai', 'Navi Mumbai', 'Thane', 'Mira Road', 'Vasai', 'V
       
       <!-- Company Information -->
       <div class="space-y-4">
-        <a href={import.meta.env.BASE_URL} class="flex flex-col">
+        <a href={baseUrl} class="flex flex-col">
           <span class="text-2xl font-bold tracking-tight text-white">Raju Pachuji Chohan</span>
           <span class="text-xs tracking-wider text-accent font-semibold uppercase">Awnings & Canopies Specialist</span>
         </a>
@@ -93,7 +94,7 @@ const serviceAreas = ['Mumbai', 'Navi Mumbai', 'Thane', 'Mira Road', 'Vasai', 'V
               <svg class="h-5 w-5 mr-3 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span class="text-sm">info@awningsmumbai.com</span>
+              <span class="text-sm">info@programmingplaces.com</span>
             </li>
           </ul>
         </div>
@@ -118,7 +119,7 @@ const serviceAreas = ['Mumbai', 'Navi Mumbai', 'Thane', 'Mira Road', 'Vasai', 'V
         &copy; {currentYear} Raju Pachuji Chohan - Awnings & Canopies. All rights reserved.
       </p>
       <div class="flex space-x-6">
-        <a href={`${import.meta.env.BASE_URL}sitemap-index.xml`} class="text-xs text-gray-500 hover:text-secondary">Sitemap</a>
+        <a href={`${baseUrl}sitemap-index.xml`} class="text-xs text-gray-500 hover:text-secondary">Sitemap</a>
         <span class="text-xs text-gray-600">|</span>
         <span class="text-xs text-gray-500">Built using Astro & Tailwind CSS</span>
       </div>
