@@ -1,14 +1,14 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname === '/' ? 'home' : pathname.replace(/^\/|\/$/g, '');
-
 const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Contact', path: '/contact' }
+  { name: 'Home', path: import.meta.env.BASE_URL },
+  { name: 'About', path: `${import.meta.env.BASE_URL}about` },
+  { name: 'Services', path: `${import.meta.env.BASE_URL}services` },
+  { name: 'Gallery', path: `${import.meta.env.BASE_URL}gallery` },
+  { name: 'Contact', path: `${import.meta.env.BASE_URL}contact` }
 ];
+
+const normalize = (p: string) => p.replace(/\/$/, '') || '/';
+const currentNormalized = normalize(Astro.url.pathname);
 ---
 
 <header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-primary/95 md:bg-primary/90 backdrop-blur-md border-b border-white/10 shadow-lg">
@@ -16,7 +16,7 @@ const navItems = [
     <div class="flex items-center justify-between h-20">
       
       <!-- Logo / Branding -->
-      <a href="/" class="flex flex-col group">
+      <a href={import.meta.env.BASE_URL} class="flex flex-col group">
         <span class="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-secondary transition-colors duration-200">
           Raju Pachuji Chohan
         </span>
@@ -28,9 +28,7 @@ const navItems = [
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
         {navItems.map(item => {
-          const isHome = item.path === '/' && currentPath === 'home';
-          const isOther = item.path !== '/' && currentPath === item.path.replace(/^\//, '');
-          const isActive = isHome || isOther;
+          const isActive = currentNormalized === normalize(item.path);
           return (
             <a 
               href={item.path} 
@@ -88,9 +86,7 @@ const navItems = [
   <div id="mobile-menu" class="hidden md:hidden bg-primary border-b border-white/10 transition-all duration-300">
     <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
       {navItems.map(item => {
-        const isHome = item.path === '/' && currentPath === 'home';
-        const isOther = item.path !== '/' && currentPath === item.path.replace(/^\//, '');
-        const isActive = isHome || isOther;
+        const isActive = currentNormalized === normalize(item.path);
         return (
           <a 
             href={item.path} 

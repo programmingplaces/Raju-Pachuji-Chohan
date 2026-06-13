@@ -10,7 +10,7 @@ interface Props {
 const { 
   title, 
   description, 
-  link = "/services", 
+  link = `${import.meta.env.BASE_URL}services`, 
   icon = "awning", 
   benefits = [] 
 } = Astro.props;
