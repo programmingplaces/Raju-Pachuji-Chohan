@@ -1,0 +1,242 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import CTA from '../components/CTA.astro';
+
+const categories = [
+  { id: "all", name: "All Projects" },
+  { id: "awning", name: "Awnings" },
+  { id: "canopy", name: "Fabric Canopies" },
+  { id: "tensile", name: "Tensile Structures" },
+  { id: "polycarbonate", name: "Polycarbonate Roofing" },
+  { id: "shed", name: "Parking Sheds" }
+];
+
+const projects = [
+  { id: 1, title: "Retractable Terrace Awning", category: "awning", location: "Bandra Cafe", icon: "awning" },
+  { id: 2, title: "Architectural Tensile Courtyard Cover", category: "tensile", location: "Juhu Resort", icon: "tensile" },
+  { id: 3, title: "Multi-Car Polycarbonate Parking Shed", category: "shed", location: "Thane Society", icon: "shed" },
+  { id: 4, title: "Vibrant Entrance Dome Canopy", category: "canopy", location: "Colaba Hotel", icon: "canopy" },
+  { id: 5, title: "Opal Polycarbonate Balcony Cover", category: "polycarbonate", location: "Andheri Apartment", icon: "roof" },
+  { id: 6, title: "Residential Fixed Window Awning", category: "awning", location: "Khar Bungalow", icon: "awning" },
+  { id: 7, title: "Large Swimming Pool Tensile Shade", category: "tensile", location: "Navi Mumbai Club", icon: "tensile" },
+  { id: 8, title: "Double-Bay Cantilever Parking Cover", category: "shed", location: "Malad Office Complex", icon: "shed" },
+  { id: 9, title: "Terrace French-Curve Canopy", category: "canopy", location: "Powai Penthouse", icon: "canopy" }
+];
+---
+
+<MainLayout
+  title="Project Gallery | Awnings, Canopies & Tensile Structures Portfolio"
+  description="Browse our portfolio of completed shade projects across Mumbai. Filter by retractable awnings, tensile domes, car parking sheds, and polycarbonate sheets."
+  keywords="awning photo gallery, tensile structure design, parking shed layout, canopy window images"
+>
+
+  <!-- Header Banner -->
+  <section class="bg-primary text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-accent">Our Work</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mt-2 font-display">
+        Completed Project Gallery
+      </h1>
+      <p class="text-gray-300 mt-4 max-w-2xl text-base sm:text-lg">
+        Explore our fabrication and installation projects for residences, corporate offices, hotels, and cafes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Navigation & Project Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filter buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="filter-buttons">
+        {categories.map(cat => (
+          <button 
+            data-filter={cat.id}
+            class={`px-4 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full border transition-all duration-200 cursor-pointer ${
+              cat.id === "all" 
+                ? "bg-secondary text-white border-secondary shadow-md" 
+                : "bg-white text-primary border-gray-200 hover:border-gray-300"
+            }`}
+          >
+            {cat.name}
+          </button>
+        ))}
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+        {projects.map(proj => (
+          <div 
+            data-category={proj.category}
+            class="project-item group overflow-hidden bg-gray-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
+          >
+            <!-- Project Image representation (SVG placeholder) -->
+            <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-zoom-in project-img-trigger">
+              <!-- Grid overlay pattern -->
+              <svg class="absolute inset-0 w-full h-full opacity-10 text-primary" fill="none" viewBox="0 0 100 100" stroke="currentColor">
+                <path stroke-dasharray="2 2" d="M10,0 V100 M20,0 V100 M30,0 V100 M40,0 V100 M50,0 V100 M60,0 V100 M70,0 V100 M80,0 V100 M90,0 V100" />
+                <path stroke-dasharray="2 2" d="M0,10 H100 M0,20 H100 M0,30 H100 M0,40 H100 M0,50 H100 M0,60 H100 M0,70 H100 M0,80 H100 M0,90 H100" />
+              </svg>
+              
+              <!-- Category-specific visual representation -->
+              <svg class="w-1/3 h-1/3 text-secondary/60 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                {proj.category === "awning" && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20 L90 45 L10 75 Z" />
+                )}
+                {proj.category === "tensile" && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 90 L50 10 L90 90 Q 50 70, 10 90" />
+                )}
+                {proj.category === "shed" && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 80 L50 20 L90 80 M30 80 V40 M70 80 V40" />
+                )}
+                {proj.category === "polycarbonate" && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 30 H90 V70 H10 Z M30 30 V70 M60 30 V70" />
+                )}
+                {proj.category === "canopy" && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 50 Q 50 10, 90 50 V80 H10 Z" />
+                )}
+              </svg>
+
+              <!-- Zoom Icon -->
+              <div class="absolute inset-0 bg-primary/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="text-white bg-secondary p-3 rounded-full font-bold shadow-lg">🔍 Zoom</span>
+              </div>
+            </div>
+
+            <!-- Project Meta Details -->
+            <div class="p-6">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">
+                {proj.category}
+              </span>
+              <h3 class="text-lg font-bold text-primary mt-1 font-display">
+                {proj.title}
+              </h3>
+              <p class="text-xs text-gray-500 font-semibold mt-1">
+                📍 {proj.location}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal Overlays (Hidden by default) -->
+  <div 
+    id="lightbox-modal" 
+    class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col items-center justify-center p-4"
+  >
+    <!-- Close button -->
+    <button 
+      id="lightbox-close"
+      class="absolute top-6 right-6 text-white hover:text-secondary text-3xl font-extrabold focus:outline-none cursor-pointer"
+      aria-label="Close Lightbox"
+    >
+      &times;
+    </button>
+    
+    <!-- Lightbox Image Area -->
+    <div class="max-w-4xl max-h-[80vh] w-full flex items-center justify-center p-2" id="lightbox-content">
+      <!-- We load the SVG structure from the clicked card dynamically via JS -->
+    </div>
+
+    <!-- Lightbox Caption -->
+    <div class="text-center mt-6 space-y-1">
+      <h4 class="text-white font-bold text-lg font-display" id="lightbox-title">Project Title</h4>
+      <p class="text-accent text-xs uppercase font-bold tracking-widest" id="lightbox-category">Category</p>
+      <p class="text-gray-400 text-xs font-semibold" id="lightbox-location">Location</p>
+    </div>
+  </div>
+
+  <CTA />
+
+</MainLayout>
+
+<script>
+  // Filter Category Handler
+  const buttons = document.querySelectorAll('#filter-buttons button');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active classes from all buttons
+      buttons.forEach(b => {
+        b.classList.remove('bg-secondary', 'text-white', 'border-secondary', 'shadow-md');
+        b.classList.add('bg-white', 'text-primary', 'border-gray-200');
+      });
+
+      // Add active class to clicked button
+      btn.classList.add('bg-secondary', 'text-white', 'border-secondary', 'shadow-md');
+      btn.classList.remove('bg-white', 'text-primary', 'border-gray-200');
+
+      const filter = btn.getAttribute('data-filter') || 'all';
+
+      projectItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (filter === 'all' || itemCategory === filter) {
+          (item as HTMLElement).style.display = 'block';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox Modal Logic
+  const triggers = document.querySelectorAll('.project-img-trigger');
+  const modal = document.getElementById('lightbox-modal');
+  const closeBtn = document.getElementById('lightbox-close');
+  const contentArea = document.getElementById('lightbox-content');
+  const lTitle = document.getElementById('lightbox-title');
+  const lCategory = document.getElementById('lightbox-category');
+  const lLocation = document.getElementById('lightbox-location');
+
+  if (modal && closeBtn && contentArea && lTitle && lCategory && lLocation) {
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        // Find parent card details
+        const card = trigger.closest('.project-item');
+        if (card) {
+          const title = card.querySelector('h3')?.textContent || '';
+          const category = card.querySelector('span')?.textContent || '';
+          const location = card.querySelector('p')?.textContent || '';
+          
+          // Get the inner SVG content of the trigger
+          const svgMarkup = trigger.querySelector('svg')?.outerHTML || '';
+
+          // Populate Lightbox
+          lTitle.textContent = title;
+          lCategory.textContent = category;
+          lLocation.textContent = location;
+          contentArea.innerHTML = svgMarkup;
+          
+          // Style SVG for large display
+          const loadedSvg = contentArea.querySelector('svg');
+          if (loadedSvg) {
+            loadedSvg.classList.remove('w-1/3', 'h-1/3', 'group-hover:scale-110');
+            loadedSvg.classList.add('w-[300px]', 'h-[300px]', 'text-secondary');
+          }
+
+          // Open Modal
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  }
+</script>

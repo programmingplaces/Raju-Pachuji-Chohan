@@ -1,0 +1,435 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTA from '../components/CTA.astro';
+
+const overviewServices = [
+  {
+    title: "Awning Installation",
+    description: "Premium retractable and fixed awnings designed for residential terraces, shop fronts, and commercial decks.",
+    icon: "awning",
+    link: "/services#awning",
+    benefits: ["UV Ray Protection", "Waterproof Fabrics", "Custom Colors"]
+  },
+  {
+    title: "Tensile Structures",
+    description: "Architectural membrane designs for large open spaces, swimming pools, courtyard coverings, and resorts.",
+    icon: "tensile",
+    link: "/services#tensile",
+    benefits: ["High Wind Resistance", "30+ Year Lifespan", "Modern Designs"]
+  },
+  {
+    title: "Parking Sheds",
+    description: "Heavy-duty tensile and polycarbonate car parking structures for commercial complexes and residential societies.",
+    icon: "sheds",
+    link: "/services#parking",
+    benefits: ["Vehicle Heat Control", "Galvanized Frame", "All-Weather Proof"]
+  },
+  {
+    title: "Polycarbonate Roofing",
+    description: "Sleek, transparent, or tinted roofing sheets for balconies, walkway corridors, and industrial skylights.",
+    icon: "roofing",
+    link: "/services#polycarbonate",
+    benefits: ["99% UV Blockage", "Impact Resistant", "High Light Transmission"]
+  },
+  {
+    title: "Fabric Canopies",
+    description: "Elegant dome-shaped or straight-slope fabric shelters for entrance doorways, hotels, and cafes.",
+    icon: "canopy",
+    link: "/services#canopies",
+    benefits: ["Vibrant Color Palette", "Rust-Free Aluminium", "Branding Options"]
+  },
+  {
+    title: "Commercial Shade Solutions",
+    description: "Large-scale retractable roofs, glass enclosures, and shade structures customized for restaurants and hotels.",
+    icon: "commercial",
+    link: "/services#commercial",
+    benefits: ["Space Optimization", "Heavy Duty Motors", "Professional Engineering"]
+  }
+];
+
+const faqs = [
+  {
+    q: "What materials do you use for your tensile structures and awnings?",
+    a: "We use high-grade structural PVC, PVDF, and PTFE membranes sourced from premium international manufacturers. Our frames are fabricated from hot-dip galvanized steel or rust-resistant structural aluminium, ensuring they withstand heavy monsoon winds and harsh coastal heat."
+  },
+  {
+    q: "How long does a typical awning installation take?",
+    a: "Standard residential awning installations in Mumbai are typically completed within 3 to 5 business days after layout design and fabric finalization. Large-scale tensile parking structures or commercial covers may take 10 to 15 days from fabrication to on-site assembly."
+  },
+  {
+    q: "Do you offer motorized retractable awnings?",
+    a: "Yes! We specialize in motorized retractable awnings equipped with high-torque, durable Somfy or equivalent motors. They can be operated easily via remote control, smartphone application, or integrated wind/rain sensors."
+  },
+  {
+    q: "Do you provide on-site inspection and measurements?",
+    a: "Absolutely. We provide free site inspections, measurements, and physical material catalog demonstrations across Mumbai, Thane, Navi Mumbai, Mira Road, Vasai, and Virar. Contact us to schedule a visit."
+  },
+  {
+    q: "What kind of warranty do you provide on structures?",
+    a: "We offer a 1-year comprehensive workmanship warranty on all installations. Depending on the chosen material, the fabrics carry manufacturer warranties ranging from 5 to 15 years against UV degradation and color fading."
+  }
+];
+
+const features = [
+  { title: "Premium Quality Fabrics", desc: "Monsoon-proof, UV-blocking, and flame-retardant materials." },
+  { title: "Custom Engineering", desc: "Precisely fabricated structures designed for structural stability." },
+  { title: "Expert Installation", desc: "Experienced on-site team ensuring safety and perfect fitment." },
+  { title: "Affordable Pricing", desc: "Highly competitive pricing with no hidden cost components." }
+];
+---
+
+<MainLayout 
+  title="Raju Pachuji Chohan | Premium Awnings, Canopies & Tensile Structures Mumbai"
+  description="Expert manufacturer and installer of high-quality awnings, canopy tents, tensile roofing, parking sheds, and polycarbonate structures in Mumbai and Thane. Call +91 97686 90579."
+  keywords="awnings mumbai, tensile structures, parking sheds, polycarbonate roofing, fabric canopy, raju pachuji chohan, retractable awnings mumbai, terrace cover"
+>
+
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- About Company Summary -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Visual Column -->
+        <div class="relative scroll-trigger opacity-0">
+          <div class="bg-gray-100 rounded-3xl overflow-hidden aspect-[4/3] flex items-center justify-center border border-gray-200 shadow-md">
+            <!-- Simulated industrial factory setup/layout svg representation -->
+            <svg class="w-2/3 h-2/3 text-secondary/30" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              <circle cx="50" cy="50" r="10" stroke="#F97316" stroke-width="2" stroke-dasharray="2 2" />
+              <path d="M50 20 L50 40 M50 60 L50 80 M20 50 L40 50 M60 50 L80 50" stroke="#1E293B" stroke-width="1"/>
+            </svg>
+          </div>
+          <!-- Floating Experience Box -->
+          <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-2xl border border-white/10 hidden sm:block">
+            <p class="text-4xl font-extrabold text-secondary">15+</p>
+            <p class="text-xs uppercase font-bold tracking-wider text-accent">Years of Quality Service</p>
+          </div>
+        </div>
+
+        <!-- Copy Column -->
+        <div class="space-y-6 scroll-trigger opacity-0">
+          <span class="text-xs tracking-widest text-secondary font-bold uppercase">
+            About the Manufacturer
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary font-display leading-tight">
+            Leading Tensile & Awning Engineers in Mumbai
+          </h2>
+          <p class="text-base text-gray-600 leading-relaxed">
+            Established under the visionary leadership of **Raju Pachuji Chohan**, we have grown to become a trusted name in outdoor space optimization. We engineer, manufacture, and install customized shading systems that combine architectural beauty with robust weather protection.
+          </p>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Whether it is protecting your vehicle from harsh sunlight, covering a restaurant's open terrace to withstand Mumbai's heavy monsoons, or creating iconic tensile dome landmarks for resorts, we use cutting-edge fabrics and hot-dip galvanized steel frames to ensure your structure stands the test of time.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex items-center space-x-3">
+              <span class="text-secondary font-bold text-lg">✓</span>
+              <span class="text-sm font-semibold text-gray-700">100% Waterproof Fabric</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="text-secondary font-bold text-lg">✓</span>
+              <span class="text-sm font-semibold text-gray-700">UV Ray Protection Coated</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="text-secondary font-bold text-lg">✓</span>
+              <span class="text-sm font-semibold text-gray-700">Wind-Tunnel Approved Frames</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="text-secondary font-bold text-lg">✓</span>
+              <span class="text-sm font-semibold text-gray-700">Free On-Site Layout Estimation</span>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="/about" class="inline-flex items-center text-sm font-bold text-secondary hover:text-secondary/80 group">
+              Read Our Full Story 
+              <svg class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-16 sm:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs tracking-widest text-secondary font-bold uppercase">
+          Our Specializations
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 font-display">
+          Premium Structural Shade Systems
+        </h2>
+        <p class="text-sm sm:text-base text-gray-600 mt-4">
+          From compact balconies to massive industrial enclosures, we deliver robust shading systems designed for style and longevity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {overviewServices.map(service => (
+          <ServiceCard 
+            title={service.title}
+            description={service.description}
+            link={service.link}
+            icon={service.icon}
+            benefits={service.benefits}
+          />
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a 
+          href="/services" 
+          class="inline-flex items-center justify-center px-6 py-3 border border-secondary text-sm font-bold rounded-lg text-secondary hover:bg-secondary/5 transition-all duration-200"
+        >
+          View All Services & Specifications
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 sm:py-20 bg-primary text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text details -->
+        <div class="lg:col-span-5 space-y-6 scroll-trigger opacity-0">
+          <span class="text-xs tracking-widest text-accent font-bold uppercase">
+            Built To Last
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+            The Standard of Engineering Excellence
+          </h2>
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+            We do not compromise. Raju Pachuji Chohan ensures every piece of steel is hot-dip galvanized and all fabrics are treated for high UV rays and intense monsoon downpours common to Mumbai coastal weather.
+          </p>
+          <div class="pt-4">
+            <a 
+              href="tel:+919768690579" 
+              class="inline-flex items-center px-5 py-3 rounded-lg bg-secondary text-sm font-bold text-white hover:bg-secondary/90 transition-colors"
+            >
+              Consult with Raju Chohan
+            </a>
+          </div>
+        </div>
+
+        <!-- Highlight Grid -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {features.map((feat, i) => (
+            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-2 scroll-trigger opacity-0">
+              <span class="text-xl font-bold text-accent">0{i+1}.</span>
+              <h3 class="text-lg font-bold text-white">{feat.title}</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">{feat.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section class="py-16 sm:py-20 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs tracking-widest text-secondary font-bold uppercase">
+          Client Feedback
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 font-display">
+          What Our Clients Say
+        </h2>
+      </div>
+
+      <!-- Testimonial Slider Structure -->
+      <div class="relative max-w-4xl mx-auto px-4">
+        <div id="testimonial-slider" class="relative h-[250px] sm:h-[180px] w-full flex items-center justify-center">
+          
+          <!-- Slide 1 -->
+          <div class="testimonial-slide absolute inset-0 flex flex-col justify-center items-center text-center space-y-4 opacity-100 transition-opacity duration-500">
+            <p class="text-base sm:text-lg italic text-gray-600 leading-relaxed">
+              "Raju and his team did a fantastic job installing retractable awnings at my cafe in Bandra. They finished the fabrication and mounting in just 4 days. It completely handles the heavy rains, and customers love the outdoor seating!"
+            </p>
+            <div>
+              <h4 class="font-bold text-primary">Vikram Malhotra</h4>
+              <p class="text-xs text-gray-400 uppercase font-semibold">Cafe Owner, Bandra, Mumbai</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide absolute inset-0 flex flex-col justify-center items-center text-center space-y-4 opacity-0 transition-opacity duration-500 pointer-events-none">
+            <p class="text-base sm:text-lg italic text-gray-600 leading-relaxed">
+              "We contracted Raju Pachuji Chohan for building tensile parking structures in our residential society in Thane. The finish is extremely professional, sturdy, and high-quality. Excellent workmanship."
+            </p>
+            <div>
+              <h4 class="font-bold text-primary">Mrs. Sneha Gokhale</h4>
+              <p class="text-xs text-gray-400 uppercase font-semibold">Society Secretary, Thane West</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide absolute inset-0 flex flex-col justify-center items-center text-center space-y-4 opacity-0 transition-opacity duration-500 pointer-events-none">
+            <p class="text-base sm:text-lg italic text-gray-600 leading-relaxed">
+              "Outstanding service! The polycarbonate sheet balcony cover is sleek, robust, and blocks out heat wonderfully while letting natural light in. Highly recommended shade manufacturer."
+            </p>
+            <div>
+              <h4 class="font-bold text-primary">Rajesh Kulkarni</h4>
+              <p class="text-xs text-gray-400 uppercase font-semibold">Apartment Owner, Mira Road</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <button 
+            id="prev-slide"
+            class="p-2 border border-gray-200 rounded-full hover:bg-secondary hover:text-white transition-colors duration-200"
+            aria-label="Previous Testimonial"
+          >
+            ←
+          </button>
+          <div class="flex gap-2" id="dots-container">
+            <span class="h-2 w-2 rounded-full bg-secondary cursor-pointer transition-colors" data-index="0"></span>
+            <span class="h-2 w-2 rounded-full bg-gray-300 cursor-pointer transition-colors" data-index="1"></span>
+            <span class="h-2 w-2 rounded-full bg-gray-300 cursor-pointer transition-colors" data-index="2"></span>
+          </div>
+          <button 
+            id="next-slide"
+            class="p-2 border border-gray-200 rounded-full hover:bg-secondary hover:text-white transition-colors duration-200"
+            aria-label="Next Testimonial"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accordion FAQ Section -->
+  <section class="py-16 sm:py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs tracking-widest text-secondary font-bold uppercase">
+          FAQ
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 font-display">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-gray-900 focus:outline-none select-none">
+              <h3 class="font-bold text-base sm:text-lg text-primary">{faq.q}</h3>
+              <span class="relative h-6 w-6 shrink-0 bg-secondary/10 text-secondary rounded-full flex items-center justify-center font-bold text-lg group-open:rotate-45 transition-transform duration-200">
+                +
+              </span>
+            </summary>
+            <div class="px-6 pb-6 pt-0 border-t border-gray-50 mt-1">
+              <p class="text-sm text-gray-600 leading-relaxed pt-4">
+                {faq.a}
+              </p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTA />
+
+</MainLayout>
+
+<script>
+  // Testimonial Carousel Script
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('#dots-container span');
+  const nextBtn = document.getElementById('next-slide');
+  const prevBtn = document.getElementById('prev-slide');
+  
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let intervalId: number;
+
+  function updateSlider(index: number) {
+    currentIndex = index;
+    slides.forEach((slide, idx) => {
+      if (idx === index) {
+        slide.classList.remove('opacity-0', 'pointer-events-none');
+        slide.classList.add('opacity-100');
+      } else {
+        slide.classList.add('opacity-0', 'pointer-events-none');
+        slide.classList.remove('opacity-100');
+      }
+    });
+
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.remove('bg-gray-300');
+        dot.classList.add('bg-secondary');
+      } else {
+        dot.classList.remove('bg-secondary');
+        dot.classList.add('bg-gray-300');
+      }
+    });
+  }
+
+  function nextSlide() {
+    let nextIdx = (currentIndex + 1) % totalSlides;
+    updateSlider(nextIdx);
+  }
+
+  function prevSlide() {
+    let prevIdx = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlider(prevIdx);
+  }
+
+  function startAutoplay() {
+    intervalId = setInterval(nextSlide, 6000) as unknown as number;
+  }
+
+  function resetAutoplay() {
+    clearInterval(intervalId);
+    startAutoplay();
+  }
+
+  if (nextBtn && prevBtn && totalSlides > 0) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoplay();
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const index = parseInt(target.getAttribute('data-index') || '0', 10);
+        updateSlider(index);
+        resetAutoplay();
+      });
+    });
+
+    startAutoplay();
+  }
+</script>

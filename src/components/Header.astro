@@ -1,0 +1,153 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname === '/' ? 'home' : pathname.replace(/^\/|\/$/g, '');
+
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Services', path: '/services' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'Contact', path: '/contact' }
+];
+---
+
+<header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-primary/95 md:bg-primary/90 backdrop-blur-md border-b border-white/10 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Logo / Branding -->
+      <a href="/" class="flex flex-col group">
+        <span class="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-secondary transition-colors duration-200">
+          Raju Pachuji Chohan
+        </span>
+        <span class="text-xs tracking-wider text-accent font-semibold uppercase">
+          Awnings & Canopies Specialist
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        {navItems.map(item => {
+          const isHome = item.path === '/' && currentPath === 'home';
+          const isOther = item.path !== '/' && currentPath === item.path.replace(/^\//, '');
+          const isActive = isHome || isOther;
+          return (
+            <a 
+              href={item.path} 
+              class={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 relative py-2 ${
+                isActive 
+                  ? 'text-secondary font-bold' 
+                  : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              {item.name}
+              {isActive && (
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-secondary rounded-full"></span>
+              )}
+            </a>
+          );
+        })}
+        
+        <!-- Contact CTA Button -->
+        <a 
+          href="tel:+919768690579" 
+          class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-secondary hover:bg-secondary/90 transition-all duration-200"
+        >
+          <svg class="h-4 w-4 mr-2 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call +91 97686 90579
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button 
+          id="mobile-menu-button"
+          type="button" 
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Icon Menu (Hamburger) -->
+          <svg id="menu-icon-open" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Icon Close (X) -->
+          <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-primary border-b border-white/10 transition-all duration-300">
+    <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+      {navItems.map(item => {
+        const isHome = item.path === '/' && currentPath === 'home';
+        const isOther = item.path !== '/' && currentPath === item.path.replace(/^\//, '');
+        const isActive = isHome || isOther;
+        return (
+          <a 
+            href={item.path} 
+            class={`block px-3 py-3 rounded-md text-base font-semibold transition-colors duration-200 ${
+              isActive 
+                ? 'text-white bg-secondary/20 border-l-4 border-secondary' 
+                : 'text-gray-300 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            {item.name}
+          </a>
+        );
+      })}
+      
+      <!-- Mobile call button -->
+      <a 
+        href="tel:+919768690579" 
+        class="mt-4 flex items-center justify-center w-full px-4 py-3 rounded-md shadow-md text-base font-bold text-white bg-secondary hover:bg-secondary/90 transition-all duration-200"
+      >
+        <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        Call +91 97686 90579
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle logic
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+
+  if (menuButton && mobileMenu && openIcon && closeIcon) {
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      
+      mobileMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+
+  // Header background opacity on scroll
+  const header = document.getElementById('main-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.remove('md:bg-primary/90');
+        header.classList.add('bg-primary/98', 'shadow-xl');
+      } else {
+        header.classList.remove('bg-primary/98', 'shadow-xl');
+        header.classList.add('md:bg-primary/90');
+      }
+    });
+  }
+</script>

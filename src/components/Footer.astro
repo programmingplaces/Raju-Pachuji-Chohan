@@ -1,0 +1,127 @@
+---
+const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'About Us', path: '/about' },
+  { name: 'Our Services', path: '/services' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'Contact', path: '/contact' }
+];
+
+const services = [
+  { name: 'Awning Installation', path: '/services#awning' },
+  { name: 'Tensile Structures', path: '/services#tensile' },
+  { name: 'Parking Sheds', path: '/services#parking' },
+  { name: 'Polycarbonate Roofing', path: '/services#polycarbonate' },
+  { name: 'Fabric Canopies', path: '/services#canopies' },
+  { name: 'Retractable Awnings', path: '/services#retractable' }
+];
+
+const serviceAreas = ['Mumbai', 'Navi Mumbai', 'Thane', 'Mira Road', 'Vasai', 'Virar'];
+---
+
+<footer class="bg-primary text-gray-300 border-t-2 border-secondary pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <!-- Company Information -->
+      <div class="space-y-4">
+        <a href="/" class="flex flex-col">
+          <span class="text-2xl font-bold tracking-tight text-white">Raju Pachuji Chohan</span>
+          <span class="text-xs tracking-wider text-accent font-semibold uppercase">Awnings & Canopies Specialist</span>
+        </a>
+        <p class="text-sm text-gray-400 mt-4 leading-relaxed">
+          Premium designer Awnings, Canopies, Tensile Structures, and Parking Sheds. Serving commercial and residential spaces across Mumbai region with durable, high-quality, and weather-proof installations.
+        </p>
+        <div class="pt-2">
+          <p class="text-xs text-gray-500 font-semibold uppercase">Owner</p>
+          <p class="text-sm text-white font-medium">Raju Pachuji Chohan</p>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-white tracking-wider uppercase mb-6 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary pb-2">
+          Quick Links
+        </h3>
+        <ul class="space-y-3">
+          {quickLinks.map(link => (
+            <li>
+              <a href={link.path} class="text-sm hover:text-secondary transition-colors duration-200 flex items-center group">
+                <span class="mr-2 text-accent group-hover:translate-x-1 transition-transform duration-200">➔</span>
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-lg font-semibold text-white tracking-wider uppercase mb-6 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary pb-2">
+          Our Services
+        </h3>
+        <ul class="space-y-3">
+          {services.map(service => (
+            <li>
+              <a href={service.path} class="text-sm hover:text-secondary transition-colors duration-200 flex items-center group">
+                <span class="mr-2 text-accent group-hover:translate-x-1 transition-transform duration-200">➔</span>
+                {service.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact Info & Service Areas -->
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-white tracking-wider uppercase mb-4 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary pb-2">
+            Contact Details
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="h-5 w-5 mr-3 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <a href="tel:+919768690579" class="text-sm hover:text-secondary transition-colors duration-200 font-semibold text-white">
+                +91 97686 90579
+              </a>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 mr-3 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span class="text-sm">info@awningsmumbai.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Service Areas</h4>
+          <div class="flex flex-wrap gap-1.5">
+            {serviceAreas.map(area => (
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-white/5 border border-white/10 text-gray-300">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-500 text-center md:text-left">
+        &copy; {currentYear} Raju Pachuji Chohan - Awnings & Canopies. All rights reserved.
+      </p>
+      <div class="flex space-x-6">
+        <a href="/sitemap-index.xml" class="text-xs text-gray-500 hover:text-secondary">Sitemap</a>
+        <span class="text-xs text-gray-600">|</span>
+        <span class="text-xs text-gray-500">Built using Astro & Tailwind CSS</span>
+      </div>
+    </div>
+  </div>
+</footer>

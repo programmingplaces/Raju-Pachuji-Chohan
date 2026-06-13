@@ -1,0 +1,276 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import CTA from '../components/CTA.astro';
+
+const servicesList = [
+  {
+    id: "awning",
+    title: "Awning Installation",
+    description: "Our high-durability fixed and retractable awnings are designed to block sun heat and shed heavy rain. Built with lightweight rust-free structural profiles and covered with premium acrylic fabrics, they are perfect for home terraces, shop fronts, and balcony covers.",
+    benefits: [
+      "Blocks up to 98% of solar heat and UV radiation.",
+      "Reduces indoor cooling cost by up to 25%.",
+      "Available in automatic remote-controlled and manual variants."
+    ],
+    useCases: [
+      "Residential balconies and apartments.",
+      "Retail shops, boutiques, and street-front restaurants.",
+      "Terraces and villas looking for sun shade."
+    ],
+    accent: "orange"
+  },
+  {
+    id: "tensile",
+    title: "Tensile Structures",
+    description: "Architectural tensile membrane structures combine visual elegance with high structural performance. We custom design, calculate, and fabricate columns and tension cables supporting PVDF/PTFE fabrics to cover large outdoor areas without columns in the center.",
+    benefits: [
+      "Spans massive distances with minimal support columns.",
+      "Engineered to withstand heavy monsoon winds up to 120 km/h.",
+      "Lightweight membrane allows soft diffused natural light through."
+    ],
+    useCases: [
+      "Amphitheaters, sports stadiums, and swimming pool coverings.",
+      "Resort gardens, open courtyards, and luxury hotel entrances.",
+      "Industrial storage and public assembly areas."
+    ],
+    accent: "blue"
+  },
+  {
+    id: "parking",
+    title: "Parking Sheds",
+    description: "Ensure your vehicles are protected from direct sunlight, bird droppings, acid rain, and heat build-up. We build heavy-duty steel parking structures styled as single-bay cantilevers, double-bay arches, or traditional sloped roofs.",
+    benefits: [
+      "Protects car paintwork and interior dashboards from heat cracking.",
+      "Hot-dip galvanized structural frames resist coastal moisture rust.",
+      "Available with tensile fabric, polycarbonate sheets, or metal profiles."
+    ],
+    useCases: [
+      "Commercial office complexes and corporate parks.",
+      "Cooperative housing societies and apartment parking lots.",
+      "Shopping mall open terrace parking decks."
+    ],
+    accent: "yellow"
+  },
+  {
+    id: "polycarbonate",
+    title: "Polycarbonate Roofing",
+    description: "Polycarbonate sheets provide lightweight, impact-resistant, and high-transparency overhead covers. They offer the transparency of glass but are 200 times stronger and a fraction of the weight, ideal for structural overheads.",
+    benefits: [
+      "Virtually unbreakable impact resistance (hail and falling debris proof).",
+      "UV-co-extruded layer prevents yellowing and keeps sheets clear.",
+      "Available in clear, bronze, blue, and heat-reflective tints."
+    ],
+    useCases: [
+      "Balcony extensions and residential sit-outs.",
+      "Walkway corridors, skywalk covers, and pergola roofs.",
+      "Industrial skylights, warehouse monitors, and atrium domes."
+    ],
+    accent: "orange"
+  },
+  {
+    id: "canopies",
+    title: "Fabric Canopies",
+    description: "Fabric canopies are stationary framing systems that add classic appeal to building facades. Fabricated in dome shapes, A-frames, or straight-wedges, they serve as excellent signage backdrops for commercial properties.",
+    benefits: [
+      "Durable structural aluminium framing that never rusts.",
+      "Excellent surface for corporate branding, logos, and lettering.",
+      "Provides reliable entrance protection from monsoons."
+    ],
+    useCases: [
+      "Hotel main entrance lobby drop-off points.",
+      "Cafes, bakeries, and high-street luxury shops.",
+      "Residential bungalow entrance doorways."
+    ],
+    accent: "blue"
+  },
+  {
+    id: "retractable",
+    title: "Retractable Awnings",
+    description: "Enjoy flexible space utilization with our retractable awning series. Fold them back on cloudy days to enjoy natural sky light, or extend them during hot afternoons. They feature wind-braced folding arms with adjustable tension.",
+    benefits: [
+      "Operable manually via crank handle or motorized remote/app control.",
+      "High wind-resistant arms with internal dual-tension cables.",
+      "Neat casing options to protect fabric when fully retracted."
+    ],
+    useCases: [
+      "Penthouse open terraces and luxury balconies.",
+      "Outdoor dining decks, pubs, and rooftop lounges.",
+      "Villas, pool houses, and garden sitouts."
+    ],
+    accent: "yellow"
+  },
+  {
+    id: "terrace",
+    title: "Terrace Covers",
+    description: "Transform your open terrace into a usable all-weather room. We fabricate fixed framing structures using structural steel or premium wood-grain finished aluminium, covered in heavy waterproof fabrics or multi-wall polycarbonates.",
+    benefits: [
+      "Converts unused open terraces into secure living spaces.",
+      "Offers perfect water drainage channel layout for heavy rain periods.",
+      "Increases the resale value and utility of residential penthouses."
+    ],
+    useCases: [
+      "Residential rooftop terraces and penthouses.",
+      "Commercial office breakout balconies.",
+      "Banquet halls and open event venues."
+    ],
+    accent: "orange"
+  },
+  {
+    id: "commercial",
+    title: "Commercial Shade Solutions",
+    description: "Large-scale shade systems engineered for high traffic and aesthetic wow-factor. We work with architects, developers, and hospitality managers to create bespoke shade configurations for expansive outdoor seating.",
+    benefits: [
+      "Engineered specifically for high structural load capacities.",
+      "Fire-retardant and smoke-emission certified architectural fabrics.",
+      "Bespoke designs tailored to architectural drawings."
+    ],
+    useCases: [
+      "Luxury hotels, sea-facing resorts, and clubs.",
+      "Corporate courtyards, school campuses, and mall entrance ways.",
+      "Transit hubs, metro platforms, and passenger drop-off sheds."
+    ],
+    accent: "blue"
+  }
+];
+---
+
+<MainLayout
+  title="Our Services | Awnings, Canopies, Tensile Structures & Parking Sheds"
+  description="Explore our range of custom shading solutions: retractable awnings, tensile membranes, polycarbonate roofing, car parking sheds, and fabric canopies. Free site visit."
+  keywords="awning installation mumbai, tensile structures manufacturer, car parking shed, polycarbonate roofing balcony, retractable awning cost, canopy fabric"
+>
+
+  <!-- Title Banner -->
+  <section class="bg-primary text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-accent">Our Products</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mt-2 font-display">
+        Shading & Roofing Services
+      </h1>
+      <p class="text-gray-300 mt-4 max-w-2xl text-base sm:text-lg">
+        Custom fabricated shading systems built for superior structural integrity and visual appeal in Mumbai.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Navigation list -->
+  <section class="bg-white border-b border-gray-100 py-6 sticky top-20 z-30 shadow-sm hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        {servicesList.map(service => (
+          <a 
+            href={`#${service.id}`} 
+            class="text-xs font-bold uppercase tracking-wider text-primary hover:text-secondary px-3 py-1.5 rounded-md hover:bg-gray-50 transition-colors"
+          >
+            {service.title.split(' ')[0]}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Service Showcase -->
+  <section class="py-16 bg-white space-y-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {servicesList.map((service, index) => {
+        const isEven = index % 2 === 0;
+        return (
+          <div 
+            id={service.id} 
+            class={`scroll-trigger opacity-0 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12 pb-16 border-b border-gray-100 last:border-b-0`}
+          >
+            <!-- Content Column -->
+            <div class={`lg:col-span-7 space-y-6 ${!isEven ? 'lg:order-2' : ''}`}>
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-extrabold bg-gray-100 text-primary border border-gray-200 uppercase tracking-widest">
+                Product 0{index + 1}
+              </span>
+              
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-primary font-display">
+                {service.title}
+              </h2>
+              
+              <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+
+              <!-- Benefits -->
+              <div>
+                <h3 class="text-xs font-bold uppercase text-gray-400 tracking-wider mb-3">Key Benefits</h3>
+                <ul class="space-y-2">
+                  {service.benefits.map(benefit => (
+                    <li class="flex items-start text-sm text-gray-600">
+                      <span class="text-secondary font-bold mr-2 mt-0.5">✓</span>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Use Cases -->
+              <div>
+                <h3 class="text-xs font-bold uppercase text-gray-400 tracking-wider mb-3">Best Suited For</h3>
+                <div class="flex flex-wrap gap-2">
+                  {service.useCases.map(useCase => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-gray-50 border border-gray-200 text-gray-700">
+                      🏢 {useCase}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Action button linking to contact with prepopulated select option -->
+              <div class="pt-4">
+                <a 
+                  href={`/contact?service=${service.id}`} 
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-secondary text-white text-sm font-bold shadow-md hover:bg-secondary/90 transition-colors"
+                >
+                  Request Quote for {service.title}
+                </a>
+              </div>
+            </div>
+
+            <!-- Representation Graphic Column (5 Columns) -->
+            <div class={`lg:col-span-5 ${!isEven ? 'lg:order-1' : ''}`}>
+              <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-inner flex items-center justify-center aspect-square">
+                <!-- Abstract outline of the product category -->
+                <svg class="w-1/2 h-1/2 text-secondary/40 animate-pulse" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                  {service.id === "awning" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20 L90 40 L10 80 Z M10 20 L10 80" />
+                  )}
+                  {service.id === "tensile" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 90 L50 10 L90 90 Q 50 70, 10 90 M50 10 L50 90" />
+                  )}
+                  {service.id === "parking" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 80 L50 20 L90 80 M30 80 L30 40 M70 80 L70 40" />
+                  )}
+                  {service.id === "polycarbonate" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 30 L90 30 L90 70 L10 70 Z M30 30 L30 70 M50 30 L50 70 M70 30 L70 70" />
+                  )}
+                  {service.id === "canopies" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 50 Q 50 10, 90 50 L90 80 L10 80 Z" />
+                  )}
+                  {service.id === "retractable" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 30 H90 M10 30 L40 70 H90 M10 30 L10 80" />
+                  )}
+                  {service.id === "terrace" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20 H90 V80 H10 Z M50 20 V80" />
+                  )}
+                  {service.id === "commercial" && (
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10 L90 30 M10 50 L90 70 M50 20 V80" />
+                  )}
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        );
+      })}
+
+    </div>
+  </section>
+
+  <CTA />
+
+</MainLayout>
