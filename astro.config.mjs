@@ -4,7 +4,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://awningsmumbai.com', // Site URL for SEO and sitemap generation
+  site: 'https://programmingplaces.github.io',
+  base: '/Raju-Pachuji-Chohan',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
